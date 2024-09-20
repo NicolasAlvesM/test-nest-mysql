@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - db
+    env_file:
+    - .env
+    command: npm run start:dev
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: todolist
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data_dev:/var/lib/mysql
+
+volumes:
+  db_data_dev:
