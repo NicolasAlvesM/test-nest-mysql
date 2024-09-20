@@ -8,25 +8,6 @@ Antes de iniciar, certifique-se de ter os seguintes pré-requisitos instalados:
 - Git: [Instalação do Git](https://git-scm.com/)
 - Docker: [Instalação do Docker](https://www.docker.com/)
 
-## Configuração do Banco de Dados MySQL
-
-1. Execute o seguinte comando para baixar a imagem do MySQL: 
-`docker pull mysql`
-
-2. Execute o container do MySQL com o seguinte comando:
-`docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 -d mysql`
-
-3. Acesse o console do MySQL com o seguinte comando:
-`docker exec -it some-mysql mysql -uroot -p`
-
-4. Digite a senha quando solicitado (no exemplo, a senha é `my-secret-pw`).
-
-5. Crie um banco de dados com o seguinte comando no console do MySQL:
-`CREATE DATABASE todolist;`
-
-6. Saia do console do MySQL:
-`exit;`
-
 ## Configuração do Projeto
 
 1. Clone este repositório:
@@ -50,15 +31,10 @@ THROTTLE_TTL_MEDIUM=3600
 THROTTLE_LIMIT_LONG=1000
 THROTTLE_TTL_LONG=86400
 
-## Instalação das Dependências
-
-1. Instale as dependências do projeto com o seguinte comando:
-`npm install`
-
 ## Execução do Projeto
 
 1. Para iniciar o servidor de desenvolvimento, execute o seguinte comando:
-`npm run start:dev`
+`docker-compose up`
 
 - O servidor estará disponível em [http://localhost:3000](http://localhost:3000).
 
