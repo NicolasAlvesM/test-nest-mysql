@@ -17,7 +17,7 @@ Antes de iniciar, certifique-se de ter os seguintes pré-requisitos instalados:
 `cd test-nest-mysql`
 
 3. Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis de ambiente:
-DATABASE_HOST=127.0.0.1
+DATABASE_HOST=db
 DATABASE_USERNAME=root
 DATABASE_PASSWORD=my-secret-pw
 DATABASE_NAME=todolist
