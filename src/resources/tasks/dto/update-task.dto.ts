@@ -1,17 +1,17 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString, IsEnum, IsDate } from 'class-validator';
+import { IsString, IsEnum, IsOptional } from 'class-validator';
 import { TaskStatus } from '../types';
 
 export class UpdateTaskDto {
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  title: string;
+  title?: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  description: string;
+  description?: string;
 
   @ApiProperty({ enum: TaskStatus, default: TaskStatus.Pending })
   @IsEnum(TaskStatus)
